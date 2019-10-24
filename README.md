@@ -1,6 +1,8 @@
 # ipaddress
 Python 3 script to change a Windows 10 machine ip address 
 
+Developed with PyCharm & Anaconda
+
 How to run:
 - In an elevated Command Prompt: python path-to-script.../AddressChanger.py
 
