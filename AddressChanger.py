@@ -8,7 +8,7 @@ def change_ip_address():
     adapter_name_line = os.popen('netsh interface show interface | find "Connected"').read()
     # TODO: parsing of the cmd output seems os and version dependent
     adapter_name_list = adapter_name_line.split()
-    network_adapter_name = adapter_name_list[3].strip()  # TODO: is the posision always the same?
+    network_adapter_name = adapter_name_list[3].strip()  # TODO: is the position always the same?
     print("network_adapter_name: " + network_adapter_name)
 
     # default gateway from netsh
@@ -37,7 +37,7 @@ def change_ip_address():
     os.system('netsh interface ipv4 set address name="' + network_adapter_name + '" static '
               + new_ip_address + ' ' + subnet_mask + ' ' + default_gateway)
     # timeout to allow ip change
-    time.sleep(4)
+    time.sleep(4)  # TODO: might not be enough for all machines.
     ip_address = socket.gethostbyname(hostname)
     print("NEW IP Address is: " + ip_address)
 
